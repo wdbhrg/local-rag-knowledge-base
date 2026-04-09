@@ -81,7 +81,7 @@ flowchart TD
         parser --> chunker[智能分块]
         chunker --> fts[(FTS5索引)]
         chunker --> vectors[(向量索引)]
-        chunker --> graph[(关联图)]
+        chunker --> relations[(关联图)]
     end
 
     subgraph Retrieval["🔍 检索流程 (fast_retriever.py)"]
