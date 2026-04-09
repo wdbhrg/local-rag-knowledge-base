@@ -1,0 +1,24 @@
+# Smoke: 保证评测脚本与核心模块可导入、可编译。完整 RAGAS 需在本地/私有 Runner 配置 OPENAI_* 与 knowledge_base.sqlite。
+name: RAG eval smoke
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths:
+      - "eval/**"
+      - "ask_kb.py"
+      - "build_kb.py"
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install core deps
+        run: pip install -r requirements.txt
+      - name: Byte-compile
+        run: python -m py_compile eval/evaluate_rag.py ask_kb.py build_kb.py

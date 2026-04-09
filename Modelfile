@@ -1,0 +1,11 @@
+# Ollama 模型定制：为知识库 RAG 拉长上下文并压低温度，便于遵循资料与角标。
+# 使用方式：安装并启动 Ollama 后，在项目目录执行 start.bat setup（等价于 pull + 下面 create）。
+#   ollama pull qwen2.5:7b
+#   ollama create kb-rag -f Modelfile
+# 应用侧栏「本机 Ollama」中可选 kb-rag。
+
+FROM qwen2.5:7b
+
+PARAMETER temperature 0.3
+PARAMETER top_p 0.9
+PARAMETER num_ctx 8192

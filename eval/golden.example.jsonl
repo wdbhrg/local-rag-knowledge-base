@@ -1,0 +1,2 @@
+{"question": "在你的资料库里替换成真实问题", "relevant_snippets": ["答案正文中必须出现的关键句片段", "或另一同义项短语"], "reference": "建议写完整参考答：RAGAS 的 context_recall 与 faithfulness 都明显依赖有实质内容的 reference"}
+{"question": "第二个评测问题示例", "relevant_snippets": ["命中检索即可判为对，不要求匹配整本书原文"], "reference": "用于全链路评测的简短参考答"}
