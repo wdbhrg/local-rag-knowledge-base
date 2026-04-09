@@ -75,7 +75,7 @@
 ### 数据流
 
 ```mermaid
-flowchart TB
+flowchart TD
     subgraph Indexing["📚 索引流程 (build_kb.py)"]
         docs[EPUB/PDF/TXT] --> parser[文档解析]
         parser --> chunker[智能分块]
